@@ -46,14 +46,28 @@ These files live at `/media/movies/backedup/` on the garage server.
 These are backed up in multiple locations, for different purposes:
 
 - AWS Glacier
-  - This backup probably requires a Synology to restore. It is backed up using `Glacier Backup` on Synology.
-  - The purpose of this backup is an extra layer of insurance. If the garage burns down, it's good to know files can eventually be restored.
+  - This backup requires a Synology to restore. It is backed up using `Glacier Backup` on Synology.
+  - The purpose of this backup is version control. If I accidentally overwrite these files with junk, I need to restore that.
   - Recovery
     - Log into AWS Console. U/P in 1password. MFA in Authenticator on my phone.
     - Go into IAM, Users, `synology`, Security Credentials. Create an access key.
     - On Synology, install Glacier Backup. Go into Restore, and Retrieve Task. Retrieve the Oregon backup task.
     - Now in Restore, you can restore the folders.
-
+- Azure Storage
+  - This backup can be restored without a Synology.
+  - At this time, this is not a complete backup.
+  - The purpose of this backup is to have easy recovery available, without needing to setup a Synology.
+  - It also supports versioned backups. I'm going to migrate to this.
+  - Recovery with Synology
+    - Open Hyper Backup
+    - Select Microsoft Azure 1
+    - For full recovery, select Restore. (For versioned recovery, select Version list)
+    - Do not recover system configuration
+  - Recovery without Synology
+    - Login to portal.azure.com (using my outlook.com login)
+    - Storage account, `crandallsynology`
+    - Can use Storage browser
+    - Select files to restore, download them
 
 
 ## Todo
@@ -61,3 +75,4 @@ These are backed up in multiple locations, for different purposes:
 - Setup digital legacy on iPhone
 - Investigate digital legacy from Google
 - Should photos be moved to external SSD?
+- Move AWS glacier backup to Azure
