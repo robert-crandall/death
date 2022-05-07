@@ -58,12 +58,12 @@ These are backed up in multiple locations, for different purposes. Listed in ord
 - Azure Storage - Cold Backup (Hyper Backup)
   - **Purpose:** Insurance. Recovers directly to a Synology (can also do single file recovery to Synology)
   - **Schedule:** Weekly
-  - **Versioning:** TBD
+  - **Versioning:** Via plugin settings. Will keep 10 copies of files.
   - At this time, this is not a complete backup.
   - Recovery
     - Launch Synology, Hyper Backup.
-    - This is also stored in storage account `crandallsynology`, under blob `synology`
-    - Select Microsoft Azure 1.
+    - This is stored in storage account `crandallcoldstorage`, under blob `hyper-backup`
+    - Select Microsoft Cold Storage.
     - For single files, select version list. Otherwise, select Restore.
     - Select Restore Data. Do not restore configuration.
   
@@ -88,6 +88,8 @@ This migration will take some time because it's backing up ~800gb to two locatio
 - [ ] Enable documents backup to Azure cold
 - [ ] Enable documents backup to Azure live
 - [ ] Turn off AWS backups
+- [ ] Delete hyper backup `Microsoft Azure 1`
+- [ ] Delete blob storage `crandallsynology`, `synology`
 - [ ] Move iPhoto backups to NAS, once weekly
 - [ ] Set a task to delete AWS storage after 1 year
 
@@ -95,6 +97,4 @@ This migration will take some time because it's backing up ~800gb to two locatio
 
 - Setup digital legacy on iPhone
 - Investigate digital legacy from Google
-- Should photos be moved to external SSD?
-- Move AWS glacier backup to Azure
-- Does Azure cold backup need it's own storage blob, in order to use native versioning?
+- Test moving photos from laptop to SSD
