@@ -23,7 +23,7 @@ The most important thing to recover is home photos & videos. This is why I'm wri
 
 ### Photos
 
-Photos are very safe. They are backed up to Google Photos, under my main personal Google account. This is an automated process directly from the phones. I've previously backed up all camera photos as well, but do not take pictures with standalone cameras anymore.
+Photos are very safe. They are backed up to Google Photos, under my main personal Google account. This is an automated process directly from all phones. All phones backup to the single Google account. I've previously backed up all standalone camera photos as well.
 
 All photos primary location is stored on my laptop hard drive.
 
