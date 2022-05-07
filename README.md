@@ -56,7 +56,7 @@ These are backed up in multiple locations, for different purposes. Listed in ord
     - Select files to restore, download them. Use the `View Previous Versions` to recover a previous version.
 
 - Azure Storage - Cold Backup (Hyper Backup)
-  - **Purpose:** Recovery directly to a Synology (can also do single file recovery to Synology)
+  - **Purpose:** Insurance. Recovers directly to a Synology (can also do single file recovery to Synology)
   - **Schedule:** Weekly
   - **Versioning:** TBD
   - At this time, this is not a complete backup.
@@ -68,7 +68,7 @@ These are backed up in multiple locations, for different purposes. Listed in ord
     - Select Restore Data. Do not restore configuration.
   
 - AWS Glacier - Legacy
-  - **Purpose:** Recovery directly to a Synology
+  - **Purpose:** Original backup method. Recovers directly to a Synology.
   - **Schedule:** Monthly
   - **Versioning:** Yes, using plugin settings
   - Recovery
