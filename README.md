@@ -14,7 +14,8 @@ First step to recovering is getting access to everything. The password for all a
 
 ![image](https://user-images.githubusercontent.com/86014438/167260785-f57881cd-fb7c-415b-94d5-723b5d6953d6.png)
 
-- Passwords are stored in 1Password. My wife can access many shared passwords in this account. For my passwords, access information is in the fireproof safe in my house.
+- Passwords are stored in 1Password. Access information is in the fireproof safe in my house.
+- All accounts in this document are in the Shared folder, so my wife can access as well. 
 - 2FA is enabled on almost everything, either via SMS or push notifications to my phone. Hopefully you can unlock my phone.
 
 ## Home Documents
