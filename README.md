@@ -43,8 +43,27 @@ These files live at `/media/movies/backedup/` on the garage server.
 
 #### Backups
 
-These are backed up in multiple locations, for different purposes:
+These are backed up in multiple locations, for different purposes. Listed in order most likely needed for recovery.
 
+- Azure Storage - Cloud Sync
+  - The purpose of this backup is to have easy recovery available, without needing a Synology. It can restore single files at a time via a browser. I believe the entire backup can also be recovered, though I haven't tested this.
+  - These files are backed up live. Once they are written to Synology, they are also written to Azure.
+  - At this time, this is not a complete backup. I'm migrating from AWS to this. (AWS is up to date until this transition is done).
+  - It also supports versioned files.
+  - Recovery
+    - Login to portal.azure.com (U is outlook, P in 1password. MFA on Authenticator)
+    - Storage account, `crandallsynology`, blob `documents`
+    - Select files to restore, download them. Use the `View Previous Versions` to recover a previous version.
+- Azure Storage - Hyper Backup
+  - The purpose of this backup is the insurance type backup. It can restore the entire directory to a Synology easily. It can also do single file restores, but requires the Synology for this.
+  - These files are backed up weekly.
+  - At this time, this is not a complete backup.
+  - Recovery
+    - Launch Synology, Hyper Backup.
+    - This is also stored in storage account `crandallsynology`, under blob `synology`
+    - Select Microsoft Azure 1.
+    - For single files, select version list. Otherwise, select Restore.
+    - Select Restore Data. Do not restore configuration.
 - AWS Glacier
   - This backup requires a Synology to restore. It is backed up using `Glacier Backup` on Synology.
   - The purpose of this backup is version control. If I accidentally overwrite these files with junk, I need to restore that.
@@ -53,22 +72,20 @@ These are backed up in multiple locations, for different purposes:
     - Go into IAM, Users, `synology`, Security Credentials. Create an access key.
     - On Synology, install Glacier Backup. Go into Restore, and Retrieve Task. Retrieve the Oregon backup task.
     - Now in Restore, you can restore the folders.
-- Azure Storage
-  - This backup can be restored without a Synology.
-  - At this time, this is not a complete backup.
-  - The purpose of this backup is to have easy recovery available, without needing to setup a Synology.
-  - It also supports versioned backups. I'm going to migrate to this.
-  - Recovery with Synology
-    - Open Hyper Backup
-    - Select Microsoft Azure 1
-    - For full recovery, select Restore. (For versioned recovery, select Version list)
-    - Do not recover system configuration
-  - Recovery without Synology
-    - Login to portal.azure.com (using my outlook.com login)
-    - Storage account, `crandallsynology`
-    - Can use Storage browser
-    - Select files to restore, download them
 
+## AWS to Azure Migration
+
+This migration will take some time because it's backing up ~800gb to two locations.
+
+- [x] Setup & test Azure live backup
+- [x] Setup & test Azure cold backup
+- [x] Enable home videos backup on Azure cold
+- [ ] Enable home videos backup on Azure live
+- [ ] Enable documents backup to Azure cold
+- [ ] Enable documents backup to Azure live
+- [ ] Turn off AWS backups
+- [ ] Move iPhoto backups to NAS, once weekly
+- [ ] Set a task to delete AWS storage after 1 year
 
 ## Todo
 
