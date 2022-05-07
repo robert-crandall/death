@@ -45,18 +45,20 @@ These files live at `/media/movies/backedup/` on the garage server.
 
 These are backed up in multiple locations, for different purposes. Listed in order most likely needed for recovery.
 
-- Azure Storage - Cloud Sync
-  - The purpose of this backup is to have easy recovery available, without needing a Synology. It can restore single files at a time via a browser. I believe the entire backup can also be recovered, though I haven't tested this.
-  - These files are backed up live. Once they are written to Synology, they are also written to Azure.
+- Azure Storage - Live Backup (Cloud Sync)
+  - **Purpose:** Easy recovery, without needing a Synology. Files or file versions can be restored via browser. Directories can be restored via Storage Explorer.
+  - **Schedule:** Live.
+  - **Versioning:** Via native Azure settings.
   - At this time, this is not a complete backup. I'm migrating from AWS to this. (AWS is up to date until this transition is done).
-  - It also supports versioned files.
   - Recovery
     - Login to portal.azure.com (U is outlook, P in 1password. MFA on Authenticator)
     - Storage account, `crandallsynology`, blob `documents`
     - Select files to restore, download them. Use the `View Previous Versions` to recover a previous version.
-- Azure Storage - Hyper Backup
-  - The purpose of this backup is the insurance type backup. It can restore the entire directory to a Synology easily. It can also do single file restores, but requires the Synology for this.
-  - These files are backed up weekly.
+
+- Azure Storage - Cold Backup (Hyper Backup)
+  - **Purpose:** Recovery directly to a Synology (can also do single file recovery to Synology)
+  - **Schedule:** Weekly
+  - **Versioning:** TBD
   - At this time, this is not a complete backup.
   - Recovery
     - Launch Synology, Hyper Backup.
@@ -64,9 +66,11 @@ These are backed up in multiple locations, for different purposes. Listed in ord
     - Select Microsoft Azure 1.
     - For single files, select version list. Otherwise, select Restore.
     - Select Restore Data. Do not restore configuration.
-- AWS Glacier
-  - This backup requires a Synology to restore. It is backed up using `Glacier Backup` on Synology.
-  - The purpose of this backup is version control. If I accidentally overwrite these files with junk, I need to restore that.
+  
+- AWS Glacier - Legacy
+  - **Purpose:** Recovery directly to a Synology
+  - **Schedule:** Monthly
+  - **Versioning:** Yes, using plugin settings
   - Recovery
     - Log into AWS Console. U/P in 1password. MFA in Authenticator on my phone.
     - Go into IAM, Users, `synology`, Security Credentials. Create an access key.
@@ -93,3 +97,4 @@ This migration will take some time because it's backing up ~800gb to two locatio
 - Investigate digital legacy from Google
 - Should photos be moved to external SSD?
 - Move AWS glacier backup to Azure
+- Does Azure cold backup need it's own storage blob, in order to use native versioning?
