@@ -47,20 +47,21 @@ These files live at `/media/movies/backedup/` on the garage server.
 These are backed up in multiple locations, for different purposes. Listed in order most likely needed for recovery.
 
 - Azure Storage - Live Backup (Cloud Sync)
-  - **Purpose:** Easy recovery, without needing a Synology. Files or file versions can be restored via browser. Directories can be restored via Storage Explorer.
-  - **Schedule:** Live.
+  - **Purpose:** Easy recover if Synology is destroyed. Files or file versions can be restored via browser. Directories can be restored via Storage Explorer. This provides backup for `my garage caught fire` scenario.
+  - **Schedule:** Nightly
   - **Versioning:** Via native Azure settings.
   - At this time, this is not a complete backup. I'm migrating from AWS to this. (AWS is up to date until this transition is done).
   - Recovery
     - Login to portal.azure.com (U is outlook, P in 1password. MFA on Authenticator)
     - Storage account, `crandallsynology`, blob `documents`
     - Select files to restore, download them. Use the `View Previous Versions` to recover a previous version.
+    - Or use Storage Explorer to download large files
 
 - Azure Storage - Cold Backup (Hyper Backup)
-  - **Purpose:** Insurance. Recovers directly to a Synology (can also do single file recovery to Synology)
+  - **Purpose:** Easy recovery if Synology is still online. Recovers directly to a Synology, either directories or single files. This is my preferred backup for `I YOLO'd and accidentally destroyed family precious memories`
   - **Schedule:** Weekly
   - **Versioning:** Via plugin settings. Will keep 10 copies of files.
-  - At this time, this is not a complete backup.
+  - This is really an optional layer of backup. I may delete this before fully backing up to it.
   - Recovery
     - Launch Synology, Hyper Backup.
     - This is stored in storage account `crandallcoldstorage`, under blob `hyper-backup`
@@ -84,14 +85,16 @@ This migration will take some time because it's backing up ~800gb to two locatio
 
 - [x] Setup & test Azure live backup
 - [x] Setup & test Azure cold backup
-- [x] Enable home videos backup on Azure cold
+- [ ] Setup time machine to NAS for new computer
+- [ ] Export yearly iPhoto files to JPGs
+- [ ] Enable documents backup to Azure live (in progress)
 - [ ] Enable home videos backup on Azure live
 - [ ] Enable documents backup to Azure cold
-- [ ] Enable documents backup to Azure live
+- [ ] Enable home videos backup on Azure cold
 - [ ] Turn off AWS backups
 - [ ] Delete hyper backup `Microsoft Azure 1`
 - [ ] Delete blob storage `crandallsynology`, `synology`
-- [ ] Move iPhoto backups to NAS, once weekly
+- [ ] Decide on storing iPhoto libraries on SSD vs internal hard drive
 - [ ] Set a task to delete AWS storage after 1 year
 
 ## Todo
