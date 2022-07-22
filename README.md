@@ -42,8 +42,6 @@ These files live at `/media/movies/backedup/` on the garage server.
 
 #### Backups
 
-These are backed up in multiple locations, for different purposes. Listed in order most likely needed for recovery.
-
 - Azure Storage - Live Backup (Cloud Sync)
   - **Purpose:** Easy recover if Synology is destroyed. Files or file versions can be restored via browser. Directories can be restored via Storage Explorer. This provides backup for `my garage caught fire` scenario.
   - **Schedule:** Nightly
