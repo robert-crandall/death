@@ -20,8 +20,6 @@ First step to recovering is getting access to everything. The password for all a
 
 ## Home Documents
 
-The most important thing to recover is home photos & videos. This is why I'm writing this document.
-
 ### Photos
 
 Photos are very safe. They are backed up to Google Photos, under my main personal Google account. This is an automated process directly from all phones. All phones backup to the single Google account. I've previously backed up all standalone camera photos as well.
@@ -34,7 +32,7 @@ The `documents` root folder is backed up in the same ways that Home Videos is. S
 
 ### Home Videos
 
-This is the real motivation for writing this document. My wife has currated personal videos for each child. These files are highly important, and I treat them that way.
+My wife has currated personal videos for each child. These files are highly important, and I treat them that way.
 
 Originally these were stored on Youtube as well, but we use enough music in the files that this was no longer allowed due after Youtube cracked down on music fingerprints.
 
