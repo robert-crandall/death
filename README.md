@@ -57,6 +57,10 @@ These are backed up in multiple locations, for different purposes. Listed in ord
     - Select files to restore, download them. Use the `View Previous Versions` to recover a previous version.
     - Or use Storage Explorer to download large files
 
+#### Other Explored Backups
+
+Leaving this here for documentation of backups I explored & decided to not use.
+
 - Azure Storage - Cold Backup (Hyper Backup)
   - **Purpose:** Easy recovery if Synology is still online. Recovers directly to a Synology, either directories or single files. This is my preferred backup for `I YOLO'd and accidentally destroyed family precious memories`
   - **Schedule:** Weekly
@@ -85,17 +89,15 @@ This migration will take some time because it's backing up ~800gb to two locatio
 
 - [x] Setup & test Azure live backup
 - [x] Setup & test Azure cold backup
-- [ ] Setup time machine to NAS for new computer
+- [x] Setup time machine to NAS for new computer
 - [ ] Export yearly iPhoto files to JPGs
-- [ ] Enable documents backup to Azure live (in progress)
-- [ ] Enable home videos backup on Azure live
-- [ ] Enable documents backup to Azure cold
-- [ ] Enable home videos backup on Azure cold
-- [ ] Turn off AWS backups
+- [x] Enable documents backup to Azure live
+- [x] Enable home videos backup on Azure live
+- [x] Turn off AWS backups
 - [ ] Delete hyper backup `Microsoft Azure 1`
 - [ ] Delete blob storage `crandallsynology`, `synology`
 - [ ] Decide on storing iPhoto libraries on SSD vs internal hard drive
-- [ ] Set a task to delete AWS storage after 1 year
+- [x] Set a task to delete AWS storage after 1 year
 
 ## Todo
 
