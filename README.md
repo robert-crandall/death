@@ -43,10 +43,9 @@ These files live at `/media/movies/backedup/` on the garage server.
 #### Backups
 
 - Azure Storage - Live Backup (Cloud Sync)
-  - **Purpose:** Easy recover if Synology is destroyed. Files or file versions can be restored via browser. Directories can be restored via Storage Explorer. This provides backup for `my garage caught fire` scenario.
+  - **Purpose:** Easy recover if Synology is destroyed. Files or file versions can be restored via browser. Directories can be restored via Storage Explorer. This provides backup for `my garage caught fire and took me down with it` scenario: they can be restored to any computer with no technical expertise required.
   - **Schedule:** Nightly
   - **Versioning:** Via native Azure settings.
-  - At this time, this is not a complete backup. I'm migrating from AWS to this. (AWS is up to date until this transition is done).
   - Recovery
     - Login to portal.azure.com (U is outlook, P in 1password. MFA on Authenticator)
     - Storage account, `crandallsynology`, blob `documents`
@@ -58,8 +57,8 @@ These files live at `/media/movies/backedup/` on the garage server.
 Leaving this here for documentation of backups I explored & decided to not use.
 
 - Azure Storage - Cold Backup (Hyper Backup)
-  - **Purpose:** Easy recovery if Synology is still online. Recovers directly to a Synology, either directories or single files. This is my preferred backup for `I YOLO'd and accidentally destroyed family precious memories`
-  - **Schedule:** Weekly
+  - **Purpose:** Easy recovery if Synology is still online. Recovers directly to a Synology, either directories or single files. Strength is `I YOLO'd and accidentally destroyed family precious memories` scenario: easy recovery for a technical user going to an existing Synology.
+  - **Schedule:** Weekly (defined by plugin)
   - **Versioning:** Via plugin settings. Will keep 10 copies of files.
   - This is really an optional layer of backup. I may delete this before fully backing up to it.
   - Recovery
@@ -70,8 +69,8 @@ Leaving this here for documentation of backups I explored & decided to not use.
     - Select Restore Data. Do not restore configuration.
   
 - AWS Glacier - Legacy
-  - **Purpose:** Original backup method. Recovers directly to a Synology.
-  - **Schedule:** Monthly
+  - **Purpose:** Original backup method. Recovers directly to a Synology. Easy recovery for a technical user going to an existing Synology.
+  - **Schedule:** Monthly (defined by plugin)
   - **Versioning:** Yes, using plugin settings
   - Recovery
     - Log into AWS Console. U/P in 1password. MFA in Authenticator on my phone.
