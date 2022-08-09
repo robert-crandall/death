@@ -85,12 +85,11 @@ This migration will take some time because it's backing up ~800gb to two locatio
 - [x] Setup & test Azure live backup
 - [x] Setup & test Azure cold backup
 - [x] Setup time machine to NAS for new computer
+- [ ] Save yearly iPhoto files to zip files
 - [ ] Export yearly iPhoto files to JPGs
 - [x] Enable documents backup to Azure live
 - [x] Enable home videos backup on Azure live
 - [x] Turn off AWS backups
-- [ ] Delete hyper backup `Microsoft Azure 1`
-- [ ] Delete blob storage `crandallsynology`, `synology`
 - [ ] Decide on storing iPhoto libraries on SSD vs internal hard drive
 - [x] Set a task to delete AWS storage after 1 year
 
