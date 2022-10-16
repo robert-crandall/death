@@ -24,9 +24,9 @@ First step to recovering is getting access to everything. The password for all a
 
 Photos are very safe. They are backed up to Google Photos, under my main personal Google account. This is an automated process directly from all phones. All phones backup to the single Google account. I've previously backed up all standalone camera photos as well.
 
-Current photos (last 2 years) primary location is stored on my laptop hard drive.
+Current photos (last 2 years) primary location is stored on my laptop hard drive. They are backed up with Time Machine.
 
-Previous photos are stored on the external SSD as iPhoto libraries. These are backed up as zip files to `/documents/Pictures/iPhoto`, which is backed up to the cloud using the active method below. I've previously also backed up JPGs of the iPhoto library to `/documents/Pictures/[YEAR]`. These files are redundant, and do not need to be recovered. 
+Once a year, I use PowerPhotos to split up older photos to yearly iPhoto libraries. These are stored on an external SSD. These are backed up as zip files to `/documents/Pictures/iPhoto`, which is backed up to the cloud using the active method below. I've previously also backed up JPGs of the iPhoto library to `/documents/Pictures/[YEAR]`. These files are redundant, and do not need to be recovered. 
 
 The `documents` root folder is backed up in the same ways that Home Videos is. See below.
 
